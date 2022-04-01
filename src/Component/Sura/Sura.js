@@ -7,7 +7,7 @@ const Sura = ({getSura}) => {
             <p className='bg-gray-300 py-1 text-xl dark:bg-gray-700 dark:text-white'>Suras</p>
             <select
                 className='outline-none px-2 py-1 border space-y-1 bg-gray-100 w-full dark:bg-gray-700 dark:text-white'
-                size='10'
+                multiple size='10'
             >
                 {
                    playlist.map((sura) =>
