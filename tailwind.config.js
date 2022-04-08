@@ -4,7 +4,13 @@ module.exports = {
   ],
   darkMode: 'class',
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        bangla : ['Noto Serif Bengali', 'serif'],
+        arabic : ['Noto Naskh Arabic', 'serif'],
+        english: ['Sanchez', 'serif']
+      }
+    },
   },
   plugins: [],
 }

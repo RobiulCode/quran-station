@@ -1,43 +1,15 @@
-import React,{ useState } from 'react';
-import Play from '../Play/Play';
-import Reciter from '../Reciter/Reciter';
-import Sura from '../Sura/Sura';
+import React from 'react';
+import HomeData from './HomeData/HomeData'
+import HomeItem from './HomeItem/HomeItem';
+
+
 
 const Home = () => {
-    const [reciter,setReciter] = useState({
-        name: 'Mishary Alafasi',
-        Server: 'https://server8.mp3quran.net/afs'
-    })
-    const [sura,setSura] = useState({
-        id: 1,
-        name: "الفاتحة",
-        total_verses: 7,
-        transliteration: "Al-Fatihah"
-    })
-    
-    //get reciter server url function
-    const getReciter =( reciter) =>{
-        setReciter(reciter);
-    }
-    //get sura no function
-    const getSura =(sura) =>{
-        setSura(sura);
-    }
-    
-
     return (
-        <div className="space-y-2 mx-3 md:w-11/12 md:mx-auto">
-            <div className=''>
-                <Play reciter={reciter} sura={sura}/>
-            </div>
-            <div className="flex gap-x-4">
-                <div className='w-1/2'>
-                    <Reciter getReciter={getReciter}/>
-                </div>
-                <div className='w-1/2'>
-                    <Sura getSura={getSura}/>
-                </div>
-            </div>
+        <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 p-2 md:w-11/12 md:mx-auto border'>
+            {
+                HomeData.map((item)=><HomeItem key={item.id} item={item}/>)
+            }
         </div>
     );
 };
